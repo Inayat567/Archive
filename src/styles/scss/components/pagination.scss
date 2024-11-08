@@ -1,0 +1,49 @@
+.pagination{
+    
+    display: flex;
+    justify-content: center;
+
+    &__arrows{
+        button{
+            background: transparent;
+            padding: 5px;
+            margin: 0;
+        }
+        img{
+            width: 13px;
+            height: 7px;
+        }
+    }
+
+    &__dots{
+       
+        margin: 0 41px;
+        ul{
+            list-style:  none !important;
+            display: flex;
+        }
+
+        li{
+            
+            &:not(:last-of-type){
+                margin-right: 7px;
+            }
+            &.active{
+                button{
+                    background: #fff;
+                }
+            }
+            button{
+                content: " ";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #959595;
+                padding: 5px;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

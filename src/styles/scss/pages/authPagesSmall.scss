@@ -1,0 +1,234 @@
+.auth-pages-small{
+    width: 100%;
+
+    &:before{
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 60px;
+        z-index: 2;
+        -webkit-app-region: drag; /* app drag */
+    }
+  
+    .page-limiter{
+        padding: 20px 23px;
+        width: 269px;
+        height: 382px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    a, 
+    h1, 
+    .form-element label,
+    .title,
+    .subtitle
+    {
+        color: white;
+    }
+
+    &__bottom-link{
+        margin-top: 15px;
+    }
+
+    a{
+        text-decoration: white;
+    }
+}
+
+
+.login-page-small{
+    .title-wrapper{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h1{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            padding: 0;
+            margin: 0;
+        }
+
+        img{
+            margin-left: 6px;
+            width: 22px;
+            height: 22px;
+        }   
+    }
+
+    .form-element{
+        label{
+            font-size: 12px;
+            line-height: 16px;
+        }
+        input{
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+
+    .flex-spread{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .remember{    
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 5px;
+        label{
+            margin-left: 5px;
+            font-size: 10px;
+            line-height: 14px;
+            color: #C7C7C7;
+        }
+        input{
+            color: #000;
+        }
+    }
+
+    .forgot{
+        font-size: 10px;
+        line-height: 14px;
+        color: #C7C7C7;
+    }
+
+    button.full{
+        font-size: 13px;
+        line-height: 18px;
+        background: #262626;
+    }
+    
+
+    .social-login{
+        margin-top: 14px;
+        button{
+            color: #C7C7C7;
+        }
+    }
+   
+    .auth-page__bottom-link{
+        margin-top: 15px;
+    }
+}
+
+.testing-loader{
+    display: flex;
+    justify-content: space-between;
+    button{
+        width: 49% !important;
+    }
+}
+
+.reset-page-small{
+
+    .page-limiter{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .title-wrapper{
+        
+        margin-bottom: 15px;
+        
+        .title{
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            h1{
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 25px;
+            }
+            img{
+                margin-left: 8px;
+                height: 18px;
+            }
+        }
+    }
+
+    .subtitle{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 19px;
+        margin-bottom: 21px;
+    }
+
+    .form-contents{
+        button.full{
+            background: #262626;
+        }
+    }
+
+   
+
+    .link-with-icon{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        color: #FFFFFF;
+        margin-top: 20px;
+        
+        a{
+            text-decoration: none !important;
+        }
+        img{
+            height: 12px;
+            margin-right: 8px;
+        }
+    }
+}
+
+.finish-registration{
+    background: #3B3B3B;
+
+    .title-wrapper{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h1{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            padding: 0;
+            margin: 0;
+        }
+
+        img{
+            margin-left: 6px;
+            width: 22px;
+            height: 22px;
+        }   
+    }
+
+    .form-element{
+        label{
+            font-size: 12px;
+            line-height: 16px;
+        }
+        input{
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+
+    .error-message{
+        font-size: 12px;
+        line-height: 16px;
+        color: rgb(241, 114, 114);
+    }
+
+    button.full{
+        margin-top: 20px;
+        background: #262626;
+    }
+}

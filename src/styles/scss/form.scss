@@ -1,0 +1,395 @@
+@use "sass:math";
+
+
+form, .form {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+
+    .invalid-input{
+      color: red;
+      font-size: 0.8em;
+      margin-bottom: 10px;
+    }
+
+    .form-element{
+      label{
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+      input{
+        color: #000;
+      }
+
+      &.hidden{
+        display: none !important;
+      }
+    }
+
+    label {
+      color: #363438;
+    }
+
+    input{
+      box-sizing: border-box;
+      background: #FEFEFE;
+      border: 1px solid #DFDFDF;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    input:not([type="checkbox"]){
+      margin-bottom: 15px;
+    }
+
+    button{
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: center;
+      padding: 15px 20px !important;
+      background-color: #363438;
+
+      &.full{
+        width: 100%;
+        display: block;
+        margin-bottom: 7px;
+      }
+    }
+
+    .input-with-icon{
+      position: relative;
+
+      input{
+        width: 100%;
+      }
+
+      .input-icon{
+        position: absolute;
+        right: 4px;
+        padding: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        max-width: 25px;
+        height: auto;
+
+      }
+    }
+
+    &.form-inline{
+      .form-element{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input{
+            margin: 0;
+            display: inline-block;
+        }
+        button{
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+        }
+      }
+    }
+}
+
+button,
+fieldset,
+input,
+legend,
+select,
+textarea {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+img,
+button{
+  -webkit-app-region: no-drag;
+}
+
+legend,
+fieldset,
+select,
+textarea,
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  min-height: 10rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  color: #000;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  height: 1rem;
+  width: 1rem;
+  vertical-align: middle;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+  background-image: radial-gradient(
+    hsl(213, 73%, 50%) 40%,
+    transparent calc(40% + 1px)
+  );
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* Firefox */
+  color: #ADADAD;
+}
+
+.button-link{
+  color: #fff;
+  font-size: 1em;
+  background: transparent !important; 
+  outline: 0 none !important;
+  border: 0 none !important;
+  cursor: pointer;
+  font-weight: 700;
+
+  &.underline{
+    position: relative;
+    &:after{
+      position: absolute;
+      bottom: 2px;
+      left: 0px;
+      width: 100%;
+      height: 1px;
+      background: white;
+      content: "";
+    }
+  }
+}
+
+@mixin switchSize($width, $height){
+
+  $padding: math.round(math.div($width,15));
+  $borderRadius: math.round($width + $padding);
+  $roundCircle: math.floor(math.div($width,2) - $padding);
+
+  width: $width;
+  height: $height;
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(#{$roundCircle});
+    -ms-transform: translateX(#{$roundCircle});
+    transform: translateX(#{$roundCircle});
+  }
+
+  .slider{
+    &.round {
+      border-radius: $borderRadius;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      height: $roundCircle;
+      width: $roundCircle;
+      left: $padding;
+      bottom: $padding;
+    }
+  }
+
+}
+
+ /* The switch - the box around the slider */
+.switch {
+
+  // for sizes - use @include switchSize(width in pixels, height in pixels)
+  // added at the bottom of this class 
+  position: relative;
+  display: inline-block;
+
+  /* Hide default HTML checkbox */
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    // transform
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+
+    &.round {
+      &:before {
+        border-radius: 50%;
+      } 
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+  }
+
+  // default size
+  @include switchSize(40px, 22px);
+
+  // &.size-different-example{
+  //   @include switchSize(40px, 22px);
+  // }
+
+  &.style-white-orange{
+    input:checked + .slider {
+      background-color: #282828;
+      &:before{
+        background-color: #F59506;
+      }
+    }
+    
+    input:focus + .slider {
+      box-shadow: 0 0 1px #282828;
+    }
+    .slider{
+      background-color: #282828;
+      &:before{
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+
+ /* Customize the label (the container) */
+.custom-checkmark {
+
+  gap: 6px;
+  color: #C7C7C7;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__disabled {
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+  }
+  
+  input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: #fff;
+    border-radius: 2px;
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.01em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="checkbox"]:focus {
+    // outline: max(2px, 0.15em) solid currentColor;
+    // outline-offset: max(2px, 0.15em);
+  }
+  
+  input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+  
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+  }
+
+
+  // displays on light page, so should be darker/black
+  &.light{
+    color: #363438;
+  }
+
+}
+
+
+
+
+
+
+

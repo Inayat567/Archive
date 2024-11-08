@@ -1,0 +1,23 @@
+#footer {
+  margin: 0 40px;
+  background: #f1f1f1;
+  min-height: 60px;
+
+  nav {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    margin: 50px;
+
+    a {
+      font-weight: 500;
+      color: #333;
+      text-transform: capitalize;
+      text-decoration: none;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}

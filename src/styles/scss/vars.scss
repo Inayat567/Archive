@@ -1,0 +1,31 @@
+$mobile_small_width: 380px;
+$mobile_width: 450px;
+$tablet_width: 768px;
+$desktop_width: 1024px;
+$desktop_big_width: 1200px;
+
+// Legacy settings needed for the Editor
+
+$color_1: #0d0d0d; // General story/listing text, headings, logo.
+$color_2: #909090; // Sub text, icons, seperators.
+$color_3: #606060; // Buttons, links, backgrounds.
+$color_4: #b1c1cd; // Various.
+$color_5: #ecf0f2; // Sub text, various.
+$color_6: #fafafa; // Overall backgrounds.
+$color_7: #0d0d0d; // Notifications.
+
+$color_1_darken: darken( $color_1, 20 );
+$color_1_lighten: lighten( $color_1, 20 );
+$color_2_darken: darken( $color_2, 20 );
+$color_2_lighten: lighten( $color_2, 20 );
+$color_3_darken: darken( $color_3, 20 );
+$color_3_lighten: lighten( $color_3, 20 );
+
+$editor_width: 710px;
+$float_width: 992px;
+$float_size: 75%;
+$float_offset: 150px;
+$grid_width: 1000px;
+$grid_width_small: 740px;
+
+$background_color: white;

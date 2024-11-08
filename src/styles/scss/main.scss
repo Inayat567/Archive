@@ -1,0 +1,66 @@
+// Globals
+@import "vars.scss";
+@import "mixin.scss";
+@import "fonts.scss";
+@import "button.scss";
+@import "form.scss";
+@import "minimized.scss";
+@import "loader.scss";
+@import "blur.scss";
+@import "logo.scss";
+
+// Pages
+@import "pages/homePage.scss";
+@import "pages/profilePage.scss";
+@import "pages/callPage.scss";
+@import "pages/teamCallPage.scss";
+@import "pages/authPages.scss";
+@import "pages/authPagesSmall.scss";
+
+// Components
+@import "contactList.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "teamList.scss";
+@import "components/centeredPopup.scss";
+@import "components/pagination.scss";
+@import "screenshare.scss";
+
+
+// legacy
+@import "index.css";
+
+html, body{
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #3B3B3B;
+}
+
+body {
+  font-family: "Manrope";
+  color: #000;
+  padding: 0;
+}
+
+*, a, button, input, textarea{
+  font-family: "Manrope";
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  #app {
+    flex: 1 1 auto;
+    
+    p {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+
+  }
+}

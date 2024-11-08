@@ -1,0 +1,13 @@
+.teamList {
+    margin-top: 20px;
+    color: white;
+    
+    h2 {
+        margin-bottom: 10px;
+    }
+    .team {
+        display: flex;   
+        justify-content: space-between;
+        align-items: center;
+    }
+}

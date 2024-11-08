@@ -1,0 +1,309 @@
+.team-call-page{
+
+    $self: &;
+    background: #3B3B3B;
+    position: relative;
+
+    .minimized-arrow{
+        position: relative;
+        margin-left: 20px;
+    }
+
+
+    .team-call-invitation{
+        position: relative;
+        width: 100%;
+        color: white;
+    }
+
+    &__room{
+
+    }
+    &__header{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        padding-left: 24px;
+        padding-right: 24px;
+        background: white;
+        color: #000000;
+        -webkit-app-region: drag; /* app drag */
+
+        .header-title{
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+
+            img{
+                width: 34px;
+                height: 34px;
+                margin-right: 13px;
+            }
+        }
+
+        .team-state{
+            display: flex;
+            
+
+            &>div{
+                display: flex;
+                align-items: center;
+                &:not(:last-of-type){
+                    margin-right: 15px;
+                }
+            }
+
+            .team-state-icon{
+                display: inline-block;
+                margin-right: 6px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .members-counter{
+                width: 27px;
+                height: 26px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 6px;
+                span{
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 19px;
+                }
+            }
+
+            &__joined{
+                .members-counter{
+                    margin-right: 17px;
+                    background: rgba(#89B77D, 0.25);
+                    color: #78C06B;
+                }
+            }
+            &__absent{
+                .members-counter{
+                    background: rgba(#D84E4C, 0.25);
+                    color: #DA605D;
+                }
+            }
+        }
+    }
+
+    &__container{
+        padding: 26px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        max-width: 604px;
+        // max-width: 100%;
+    }
+
+    &__main-speaker{
+        margin-bottom: 20px;
+        width: 100%;
+        height: 343px;
+        min-height: 343px;
+        // height: 100%;
+        // aspect-ratio: 4 / 3;
+        // aspect-ratio: 16 / 9;
+        // max-width: 100%;
+        // margin-left: auto;
+        // margin-right: auto;
+
+        .team-peer{
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .peer-name{
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 16px;
+                background: #2D2D2D;
+                border-radius: 5px;
+                color: #fff;
+                padding: 12px;
+            }
+        }
+
+        &.fill-space{
+            background: #2D2D2D; 
+        }
+        
+    }
+    &__peers{
+        display: flex;
+        flex-wrap: nowrap;
+        max-width: 100%; 
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        .team-peer{
+            position: relative;
+            width: 174px;
+            height: 123px;
+
+            .peer-name{
+                display: none;
+            }
+        }
+
+       
+    }
+
+    &__pagination{
+        margin: 20px auto 0;
+    }
+
+    &__controls{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        height: 60px;
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    &__pagination{
+
+    }
+
+    .peer-small-video{
+        width: 167px;
+        height: 124px;
+
+        video{    
+            border-radius: 5px;
+            max-width: 167px;
+            max-height: 124px;
+            object-fit: contain;
+            margin-left: auto;
+            margin-right: auto;
+            background: #2F2F2F;
+            transform: scale(-1, 1);
+        }
+    }
+
+    // only for main viewer (big video)
+    .team-peer{
+        position: relative;
+
+        &__container{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%; 
+            overflow: hidden;
+        }
+        
+        &__video-container{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            display: flex;
+            position: relative;
+
+            .team-peer-video{
+                background: #2F2F2F;
+            }
+
+            video{
+                /* Make video to at least 100% wide and tall */
+                min-width: 100%; 
+                min-height: 100%; 
+
+                /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+                width: auto;
+                height: auto;
+
+                /* Center the video */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) scale(-1, 1);
+
+                border-radius: 5px;
+            }
+        }
+
+    }
+    
+
+    .fullscreen-room{
+
+        width: 100vw;
+        height: 100vh;
+
+        #{ $self }__header{
+            display: none;
+        }
+        #{ $self }__container{
+            padding: 0;
+            max-width: inherit;
+        }
+        #{ $self }__main-speaker{
+            width: 100%;
+            height: 100%;
+            min-height: inherit;
+            max-height: inherit;
+            margin: 0;
+        }
+        #{ $self }__controls{
+            display: none;
+        }
+        #{ $self }__peers{
+            display: none;
+        }
+        .screensharing-peer{
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1366px){
+    // test grid like zoom (with right side participants)
+    // .team-call-page{
+    //     &__container{
+    //         display: grid;
+    //         grid-template-columns: 25px 300px 300px 300px 150px 25px;
+    //         grid-template-rows: auto;
+    //         grid-template-areas: 
+    //             ". main main main side ."
+    //             ". main main main side ."
+    //             ". ctrl ctrl ctrl side .";
+
+    //     }
+    //     &__main-speaker{
+    //         grid-area: main;
+    //         outline: 1px solid red;
+    //     }
+    //     &__controls{
+    //         margin-top: 20px;
+    //         grid-area: ctrl;
+    //         outline: 1px solid orange;
+    //     }
+    //     &__peers{
+    //         grid-area: side;
+    //         outline: 1px solid yellowgreen;
+    //         flex-direction: column;
+    //         .peer-small-video{
+    //             margin-bottom: 20px;
+    //         }
+    //     }
+    // }
+}

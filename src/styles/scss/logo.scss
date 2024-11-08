@@ -1,0 +1,9 @@
+
+.photon-logo{
+
+    height: 35px; /* in login, registration and forgot pw pages*/
+
+    &__small{ /* in nav and minimized view*/
+        height: 26px;
+    }
+}

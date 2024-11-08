@@ -1,0 +1,128 @@
+
+  button {
+    font-weight: 600;
+    font-size: 15px;
+    cursor:pointer;
+
+    &:disabled {
+      background: #999 !important;  
+      cursor: inherit;
+      opacity: 0.6;
+    }
+  }
+
+  a{
+    font-weight: 800;
+    color: #000;
+  }
+
+  button {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #363438;
+    &:hover{
+      background-color: #56515c;
+    }
+    
+    &.light{
+      color: #363438;
+      background-color: #FEFEFE;
+      border: 1px solid #DFDFDF;
+    }
+
+    &.green{
+      background-color: #89B77D;
+      color: #fff;
+      &:hover{
+        background-color: #90cc81;
+      }
+    }
+
+    &.outlined-light{
+      background-color: transparent;
+      border: 0.3px solid #FFFFFF;
+      color: #fff;
+      &:hover{
+        border-color: #e4e3e3;
+        color: #e4e3e3;
+      }
+    }
+    
+    &.clear-light,
+    &.clear-dark{
+      background-color: transparent;
+      color: black;
+      padding: 0;
+      &:hover{
+        background-color: transparent;
+      }
+    }
+
+    &.clear-light{
+      color: white;
+    }
+    &.dark{
+      background-color: #282828;
+      color: #C2C2C2;
+    }
+
+    &.sm{
+      padding: 6px 10px;
+    }
+    &.sm-plus{
+      padding: 6px 15px;
+    }
+    &.xs{
+      font-size: 10px;
+      padding: 4px 8px;
+    }
+
+    &.with-loader{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      position: relative;
+      flex-direction: row;
+      white-space: nowrap;
+
+      span{
+        opacity: 1;
+        display: inline-flex; /* !!! loading icon goes to 2nd row without inline-flex */
+        justify-content: center;
+        align-items: center;
+      }
+      .loading-animation{
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 1.2rem;
+        height: 1.2rem;
+        opacity: 0;
+      }
+
+      &.loading{
+        span{
+          opacity: 0;
+          width: 0 !important;
+        }
+        .loading-animation{
+          opacity: 1;
+        }
+      }
+      
+    }
+  }
+  
+  button:focus {
+    outline: none;
+    // box-shadow: 0 0 0 4px black;
+    box-shadow: none;
+  }
+  button:hover {
+    text-decoration: none;
+  }
+

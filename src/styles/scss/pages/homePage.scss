@@ -1,0 +1,38 @@
+.home-page {
+
+    color: white;
+    background: #3B3B3B;
+    // min-height: 100%;
+    
+    .page-limiter{
+        
+        width: 280px;
+        height: 381px;
+        padding: 20px 10px 10px 10px;
+        margin-left: auto;
+        margin-right: auto;
+
+        // these must match sizes in electronResize.ts
+        &.medium{
+            width: 517px;
+            height: 439px;
+        }
+        // these must match sizes in electronResize.ts
+        &.half-expanded{
+            width: 517px;
+            height: 439px;
+        }
+
+    }
+    
+    .testing-stuff {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+
+        button{
+            padding: 5px 10px;
+        }
+    }
+
+}
